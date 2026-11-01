@@ -1,0 +1,27 @@
+/* The signing page: a quiet header, the documents, a panel that stays in view on wide screens. */
+.ysg { min-height: 100dvh; display: flex; flex-direction: column; background: var(--background); color: var(--foreground); }
+.ysg__top { position: sticky; top: 0; z-index: 5; background: var(--surface); border-bottom: 1px solid var(--border); }
+.ysg__top-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 80rem; margin-inline: auto; padding: 0.875rem var(--yare-gutter); }
+.ysg__title { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ysg__from { font-size: 0.8125rem; color: var(--muted); }
+.ysg__badge { flex: none; padding: 0.375rem 0.875rem; border-radius: 9999px; background: var(--foreground); color: #fff; font-size: 0.8125rem; font-weight: 600; }
+.ysg__body { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 22rem; gap: 1.5rem; width: 100%; max-width: 80rem; margin-inline: auto; padding: 1.5rem var(--yare-gutter); align-items: start; }
+.ysg__docs { display: flex; flex-direction: column; gap: 1.5rem; min-width: 0; }
+.ysg__doc { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; border-radius: var(--yare-radius-card); background: var(--surface-secondary); }
+.ysg__doc-name { font-size: 0.875rem; font-weight: 600; color: var(--muted); }
+.ysg__panel { position: sticky; top: calc(var(--yare-topbar-h, 4rem) + 1rem); display: flex; flex-direction: column; gap: 1rem; }
+.ysg__h3 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+.ysg__progress-label { font-size: 0.8125rem; font-weight: 600; margin-bottom: 0.375rem; }
+.ysg__progress { height: 6px; border-radius: 9999px; background: var(--surface-secondary); overflow: hidden; }
+.ysg__progress > div { height: 100%; background: var(--accent); transition: width 300ms var(--ease-out-quad); }
+.ysg__fields { display: flex; flex-direction: column; gap: 0.25rem; }
+.ysg__field-row { display: flex; align-items: center; gap: 0.625rem; width: 100%; min-height: 2.25rem; padding-inline: 0.5rem; border-radius: var(--yare-radius-control); font-size: 0.875rem; font-weight: 500; color: var(--foreground); background: none; border: 0; cursor: pointer; }
+.ysg__field-row:hover { background: var(--surface-secondary); }
+.ysg__field-row[data-done="true"] { color: var(--muted); }
+.ysg__field-row svg { width: 1.125rem; height: 1.125rem; flex: none; }
+.ysg__mark { display: flex; justify-content: center; opacity: 0.6; }
+@media (max-width: 1023px) {
+  .ysg__body { grid-template-columns: minmax(0, 1fr); }
+  .ysg__panel { position: static; order: -1; }
+  .ysg__title { white-space: normal; }
+}

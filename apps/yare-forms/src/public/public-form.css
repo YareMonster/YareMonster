@@ -1,0 +1,141 @@
+/*
+ * The published form. Everything here is driven by the theme variables the runner sets on .yf
+ * (--f-bg, --f-text, --f-muted, --f-accent, --f-accent-text, --f-field, --f-field-border), so a
+ * theme is nine values and nothing else.
+ */
+.yf {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--f-bg);
+  color: var(--f-text);
+  font-family: var(--font-sans);
+}
+.yf__progress { position: fixed; inset: 0 0 auto 0; height: 4px; background: color-mix(in oklab, var(--f-text) 12%, transparent); z-index: 2; }
+.yf__progress-bar { height: 100%; background: var(--f-accent); transition: width 300ms var(--ease-out-quad); }
+.yf__preview { margin: 1rem auto 0; color: #ffffff; width: fit-content; max-width: calc(100% - 2rem); padding: 0.375rem 0.875rem; border-radius: 9999px; background: var(--f-text); font-size: 0.8125rem; font-weight: 600; z-index: 2; }
+.yf[data-dark="true"] .yf__preview { background: var(--f-field); color: var(--f-text); border: 1px solid var(--f-field-border); }
+.yf__logo { display: flex; justify-content: center; padding: 2rem 1.5rem 0; }
+.yf__logo img { height: 2.5rem; width: auto; max-width: 12rem; object-fit: contain; }
+.yf__main { --yf-pad-top: 2rem; flex: 1; display: grid; place-items: center; padding: var(--yf-pad-top) var(--yare-gutter) 2rem; }
+.yf__screen { width: 100%; max-width: 36rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.yf__image { max-width: 100%; max-height: 16rem; width: auto; height: auto; object-fit: contain; border-radius: var(--yare-radius-card); }
+/* A screen with a picture beside it: half and half, the picture on the side the form chose; on a phone the picture comes first. */
+.yf__split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; width: 100%; max-width: 76rem; }
+.yf__split .yf__screen { max-width: 36rem; justify-self: center; }
+.yf__split-art { aspect-ratio: 4 / 5; min-height: 0; border-radius: var(--yare-radius-card); overflow: hidden; }
+.yf__split-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.yf__split[data-side="right"] .yf__split-art { order: 2; }
+/* Full: the picture takes its whole half of the page, edge to edge and top to bottom, and stays put while the other half scrolls. */
+.yf { --yf-screen: 100dvh; }
+/* In the editor: every screen previews at the same classic 16:10 height, scrolling inside when taller; a full picture fills that frame. */
+.yf--framed { --yf-screen: 100%; aspect-ratio: 16 / 10; min-height: 0; height: auto; overflow: auto; }
+.yf--framed .yf__main { min-height: 100%; }
+/* Beside the open list the frame is narrow, so it stands taller (4:5) and nothing is cut. */
+.yf--framed[data-tall="true"] { aspect-ratio: 3 / 4; max-height: calc(100dvh - var(--yare-topbar-h) - 7rem); }
+/* The mobile view: a phone-narrow frame, phone proportions. */
+.yf--framed[data-phone="true"] { aspect-ratio: 9 / 16; max-height: calc(100dvh - var(--yare-topbar-h) - 7rem); }
+.yf__split[data-full="true"] { gap: 0; max-width: none; width: calc(100% + 2 * var(--yare-gutter)); margin: calc(-1 * var(--yf-pad-top)) calc(-1 * var(--yare-gutter)) -2rem; min-height: calc(var(--yf-screen) + var(--yf-pad-top) + 2rem); align-items: stretch; }
+.yf__split[data-full="true"] .yf__split-art { position: sticky; top: 0; height: var(--yf-screen); min-height: 100%; aspect-ratio: auto; border-radius: 0; }
+.yf__split[data-full="true"] .yf__screen { align-self: center; padding: 3rem var(--yare-gutter); }
+/* The split stacks when the page it is drawn in is narrow: a phone, or a small preview; it keys off that width, not the window's. */
+.yf__main { container-type: inline-size; }
+@container (max-width: 639px) {
+  .yf__split { grid-template-columns: 1fr; gap: 1.5rem; }
+  .yf__split[data-full="true"] { margin: calc(-1 * var(--yf-pad-top)) calc(-1 * var(--yare-gutter)) 0; min-height: 0; align-self: start; }
+  .yf__split[data-full="true"] .yf__split-art { position: static; height: auto; aspect-ratio: 16 / 9; }
+  .yf__split[data-full="true"] .yf__screen { padding: 1.75rem var(--yare-gutter) 1rem; }
+  .yf__split-art, .yf__split[data-side="right"] .yf__split-art { order: 0; aspect-ratio: 16 / 9; }
+}
+
+.yf__title { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.75rem, 2.2vw + 1rem, 2.5rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--f-text); text-wrap: balance; }
+.yf__desc { font-size: 1.125rem; line-height: 1.5; color: var(--f-muted); }
+.yf__required { color: var(--f-muted); font-size: 0.875rem; }
+.yf__field {
+  width: 100%;
+  min-height: var(--yare-control-h-lg);
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--f-field-border);
+  border-radius: var(--yare-radius-control);
+  background: var(--f-field);
+  color: var(--f-text);
+  font: inherit;
+  font-size: 1.0625rem;
+  outline: none;
+  transition: border-color 100ms var(--ease-out), box-shadow 100ms var(--ease-out);
+}
+.yf__field::placeholder { color: color-mix(in oklab, var(--f-text) 45%, transparent); }
+.yf__field:focus { border-color: var(--f-accent); box-shadow: 0 0 0 3px color-mix(in oklab, var(--f-accent) 30%, transparent); }
+textarea.yf__field { min-height: 8rem; resize: vertical; }
+select.yf__field { appearance: none; }
+.yf__choices { display: flex; flex-direction: column; gap: 0.5rem; }
+.yf__choice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: var(--yare-control-h-lg);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--f-field-border);
+  border-radius: var(--yare-radius-control);
+  background: var(--f-field);
+  color: var(--f-text);
+  font: inherit;
+  font-size: 1.0625rem;
+  text-align: start;
+  cursor: pointer;
+  transition: border-color 100ms var(--ease-out), box-shadow 100ms var(--ease-out);
+}
+.yf__choice:hover { border-color: var(--f-accent); }
+.yf__choice[aria-pressed="true"], .yf__choice[aria-checked="true"] { border-color: var(--f-accent); box-shadow: inset 0 0 0 1px var(--f-accent); }
+.yf__choice:focus-visible { outline: 2px solid var(--f-accent); outline-offset: 2px; }
+.yf__key {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 1.75rem; height: 1.75rem; border-radius: 0.5rem;
+  border: 1px solid var(--f-field-border); font-size: 0.75rem; font-weight: 700; color: var(--f-muted);
+}
+.yf__choice[aria-pressed="true"] .yf__key, .yf__choice[aria-checked="true"] .yf__key { background: var(--f-accent); color: var(--f-accent-text); border-color: var(--f-accent); }
+.yf__yesno { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.yf__error { color: #e5232b; font-size: 0.9375rem; font-weight: 500; }
+.yf[data-dark="true"] .yf__error { color: #ffb4b4; }
+.yf__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 0.25rem; }
+.yf__btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: var(--yare-control-h-lg); padding: 0 1.5rem;
+  border: 0; border-radius: var(--yare-radius-control);
+  background: var(--f-accent); color: var(--f-accent-text);
+  font: inherit; font-size: 1.0625rem; font-weight: 600; cursor: pointer;
+  transition: transform 150ms var(--ease-out), filter 100ms var(--ease-out);
+}
+.yf__btn:hover { filter: brightness(0.96); }
+.yf__btn:active { transform: scale(0.98); }
+.yf__btn:focus-visible { outline: 2px solid var(--f-text); outline-offset: 2px; }
+.yf__btn--ghost { background: transparent; color: var(--f-muted); padding-inline: 0.75rem; }
+.yf__btn--ghost:hover { color: var(--f-text); filter: none; }
+.yf__hint { font-size: 0.875rem; color: var(--f-muted); }
+.yf__hint kbd { font: inherit; font-weight: 600; }
+.yf .yare-powered { color: var(--f-muted); }
+/* With a full picture the page is one screen tall and nothing scrolls; the credit sits in the picture's lower corner, pinned. */
+.yf:has(.yf__split[data-full="true"]) { height: 100dvh; min-height: 0; overflow: hidden; }
+.yf:has(.yf__split[data-full="true"]) .yf__main { overflow: auto; padding: 0; display: block; }
+.yf:has(.yf__split[data-full="true"]) .yf__split[data-full="true"] { width: 100%; height: 100%; min-height: 100%; margin: 0; }
+.yf:has(.yf__split[data-full="true"]) .yf__split[data-full="true"] .yf__split-art { height: 100%; }
+.yf .yare-powered.yf__credit--left, .yf .yare-powered.yf__credit--right { position: fixed; bottom: 0; width: 50%; padding: 1rem; z-index: 3; color: #ffffff; }
+.yf .yare-powered.yf__credit--left { left: 0; justify-content: flex-start; }
+.yf .yare-powered.yf__credit--right { right: 0; justify-content: flex-end; }
+.yf .yare-powered.yf__credit--left .yare-powered__link, .yf .yare-powered.yf__credit--right .yare-powered__link { color: #ffffff; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
+.yf .yare-powered.yf__credit--left .yare-powered__link:hover, .yf .yare-powered.yf__credit--right .yare-powered__link:hover { color: #ffffff; background: rgba(0, 0, 0, 0.35); }
+@media (max-width: 767px) {
+  .yf:has(.yf__split[data-full="true"]) { height: auto; min-height: 100dvh; overflow: visible; }
+  .yf:has(.yf__split[data-full="true"]) .yf__main { display: grid; }
+  .yf:has(.yf__split[data-full="true"]) .yf__split[data-full="true"] { height: auto; }
+  .yf:has(.yf__split[data-full="true"]) .yf__split[data-full="true"] .yf__split-art { height: auto; }
+  .yf .yare-powered.yf__credit--left, .yf .yare-powered.yf__credit--right { position: static; width: auto; justify-content: center; color: var(--f-muted); }
+  .yf .yare-powered.yf__credit--left .yare-powered__link, .yf .yare-powered.yf__credit--right .yare-powered__link { color: inherit; text-shadow: none; }
+}
+.yf .yare-powered__link:hover { color: var(--f-text); background: color-mix(in oklab, var(--f-text) 8%, transparent); }
+.yf__closed { text-align: center; }
+@media (max-width: 767px) {
+  .yf__main { --yf-pad-top: 2.5rem; align-items: start; }
+  .yf__desc { font-size: 1rem; }
+}

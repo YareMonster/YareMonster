@@ -1,0 +1,14 @@
+# Supabase CLI configuration for Yare Crypto.
+# Link this folder to your own project and push its migrations:
+#   npx supabase link --project-ref <your-project-ref>
+#   npm run db:push
+# Then deploy the Edge Function that reads the chains and prices into your database:
+#   npx supabase functions deploy yarecrypto-sync --project-ref <your-project-ref>
+# And give it your Etherscan key (free at etherscan.io), from your own terminal:
+#   npx supabase secrets set ETHERSCAN_API_KEY=<key> --project-ref <your-project-ref>
+project_id = "yare-crypto"
+
+# The function checks the owner's sign-in itself, so the gateway does not need a JWT. This also
+# lets the new publishable keys call it.
+[functions.yarecrypto-sync]
+verify_jwt = false

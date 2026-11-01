@@ -1,0 +1,16 @@
+# Supabase CLI configuration for Yare Sign.
+# Link this folder to your own project and push its migrations:
+#   npx supabase link --project-ref <your-project-ref>
+#   npm run db:push
+# Then deploy the two Edge Functions (they send email and hand signers their documents):
+#   npx supabase functions deploy yaresign-send --project-ref <your-project-ref>
+#   npx supabase functions deploy yaresign-file --project-ref <your-project-ref>
+project_id = "yare-sign"
+
+# Both functions check who is calling themselves (the owner's sign-in, or a signer's secret link),
+# so the gateway does not need a JWT. This also lets the new publishable keys call them.
+[functions.yaresign-send]
+verify_jwt = false
+
+[functions.yaresign-file]
+verify_jwt = false

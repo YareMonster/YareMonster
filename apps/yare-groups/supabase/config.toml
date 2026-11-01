@@ -1,0 +1,12 @@
+# Supabase CLI configuration for Yare Groups.
+# Link this folder to your own project and push its migrations:
+#   npx supabase link --project-ref <your-project-ref>
+#   npm run db:push
+# Then deploy the Edge Function that creates member accounts:
+#   npx supabase functions deploy yaregroups-join --project-ref <your-project-ref>
+project_id = "yare-groups"
+
+# People calling it have no account yet, so the gateway must not ask for a JWT. This also lets the
+# new publishable keys call it.
+[functions.yaregroups-join]
+verify_jwt = false

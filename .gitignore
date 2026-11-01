@@ -1,0 +1,26 @@
+# Dependencies and build output
+node_modules/
+dist/
+.wrangler/
+*.tsbuildinfo
+
+# Local environment files. Only the *.example files are tracked.
+.env
+.env.*
+!.env.example
+
+# Supabase CLI local state, and the temporary project scripts/db-push.mjs assembles
+**/supabase/.temp/
+**/supabase/.branches/
+.yare-db/
+
+# Logs, caches and editor files
+*.log
+npm-debug.log*
+.cache/
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+Screenshot*.png
+

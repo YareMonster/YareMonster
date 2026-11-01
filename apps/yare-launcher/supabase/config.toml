@@ -1,0 +1,7 @@
+# Supabase CLI configuration for Yare Launcher.
+# Only the project id is needed to link this folder to your own project and push its migrations:
+#   npx supabase link --project-ref <your-project-ref>
+#   npx supabase db push --linked
+# Local development with `supabase start` is not part of the workflow; the app talks to your
+# hosted project directly.
+project_id = "yare-launcher"

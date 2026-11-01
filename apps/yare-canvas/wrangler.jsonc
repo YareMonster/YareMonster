@@ -1,0 +1,14 @@
+{
+  // Cloudflare Workers, static assets only: `npm run build` then `npx wrangler deploy`.
+  // Or connect the repository in the Cloudflare dashboard with root directory `apps/yare-canvas`,
+  // build command `npm run build` and deploy command `npx wrangler deploy`. See DEPLOYMENT.md.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "yare-canvas",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+  // Lets Cloudflare build a preview of a branch before it merges (`wrangler preview`).
+  "previews": {}
+}

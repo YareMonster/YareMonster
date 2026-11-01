@@ -1,0 +1,11 @@
+# Response headers for Cloudflare static assets.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Published forms may be embedded in other sites.
+/f/*
+  ! X-Frame-Options
+  Content-Security-Policy: frame-ancestors *

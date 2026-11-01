@@ -1,0 +1,512 @@
+{
+  "project": "Yare Monster",
+  "url": "https://yare.monster",
+  "repository": "https://github.com/YareMonster/YareMonster",
+  "licence": "Yare Monster Community License 1.0 (LICENSE)",
+  "requires": [
+    "Your own Supabase project",
+    "Your own Cloudflare account",
+    "Optionally, your own domain"
+  ],
+  "accountAccess": "Only emails on the deployment's allow list may create an account: select public.yare_allow_email('you@domain.com')",
+  "install": {
+    "singleApp": [
+      "git clone <repository>",
+      "cd <folder>",
+      "npm install",
+      "copy .env.example to .env and fill the two public Supabase values",
+      "npx supabase login && npm run db:push",
+      "npx supabase db query \"select public.yare_allow_email('<email>')\" --linked",
+      "npm run build && npx wrangler deploy"
+    ],
+    "severalApps": [
+      "same, but push every database once from the repository root: node scripts/db-push.mjs --project-ref <ref> [slugs...]"
+    ]
+  },
+  "apps": [
+    {
+      "slug": "analytics",
+      "name": "Yare Analytics",
+      "folder": "apps/yare-analytics",
+      "description": "Visitors counted, nobody tracked.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018190xxx",
+      "devPort": 4610,
+      "readme": "apps/yare-analytics/README.md",
+      "deployment": "apps/yare-analytics/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-analytics/skills/backup/SKILL.md",
+        "deploy": "apps/yare-analytics/skills/deploy/SKILL.md",
+        "guide": "apps/yare-analytics/skills/guide/SKILL.md",
+        "install": "apps/yare-analytics/skills/install/SKILL.md",
+        "update": "apps/yare-analytics/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "bill",
+      "name": "Yare Bill",
+      "folder": "apps/yare-bill",
+      "description": "Simple invoices, sent in a minute.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018150xxx",
+      "devPort": 4607,
+      "readme": "apps/yare-bill/README.md",
+      "deployment": "apps/yare-bill/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-bill/skills/backup/SKILL.md",
+        "deploy": "apps/yare-bill/skills/deploy/SKILL.md",
+        "guide": "apps/yare-bill/skills/guide/SKILL.md",
+        "install": "apps/yare-bill/skills/install/SKILL.md",
+        "update": "apps/yare-bill/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "blocks",
+      "name": "Yare Blocks",
+      "folder": "apps/yare-blocks",
+      "description": "Your week in blocks, on paper.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": false,
+      "migrationRange": null,
+      "devPort": 4611,
+      "readme": "apps/yare-blocks/README.md",
+      "deployment": "apps/yare-blocks/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-blocks/skills/backup/SKILL.md",
+        "deploy": "apps/yare-blocks/skills/deploy/SKILL.md",
+        "guide": "apps/yare-blocks/skills/guide/SKILL.md",
+        "install": "apps/yare-blocks/skills/install/SKILL.md",
+        "update": "apps/yare-blocks/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "book",
+      "name": "Yare Book",
+      "folder": "apps/yare-book",
+      "description": "Let people book a time with you.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018160xxx",
+      "devPort": 4608,
+      "readme": "apps/yare-book/README.md",
+      "deployment": "apps/yare-book/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-book/skills/backup/SKILL.md",
+        "deploy": "apps/yare-book/skills/deploy/SKILL.md",
+        "guide": "apps/yare-book/skills/guide/SKILL.md",
+        "install": "apps/yare-book/skills/install/SKILL.md",
+        "update": "apps/yare-book/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "canvas",
+      "name": "Yare Canvas",
+      "folder": "apps/yare-canvas",
+      "description": "Simple designs, exported.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018210xxx",
+      "devPort": 4612,
+      "readme": "apps/yare-canvas/README.md",
+      "deployment": "apps/yare-canvas/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-canvas/skills/backup/SKILL.md",
+        "deploy": "apps/yare-canvas/skills/deploy/SKILL.md",
+        "guide": "apps/yare-canvas/skills/guide/SKILL.md",
+        "install": "apps/yare-canvas/skills/install/SKILL.md",
+        "update": "apps/yare-canvas/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "coms",
+      "name": "Yare Coms",
+      "folder": "apps/yare-coms",
+      "description": "A chat bubble and your inbox.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018220xxx",
+      "devPort": 4613,
+      "readme": "apps/yare-coms/README.md",
+      "deployment": "apps/yare-coms/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-coms/skills/backup/SKILL.md",
+        "deploy": "apps/yare-coms/skills/deploy/SKILL.md",
+        "guide": "apps/yare-coms/skills/guide/SKILL.md",
+        "install": "apps/yare-coms/skills/install/SKILL.md",
+        "update": "apps/yare-coms/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "contacts",
+      "name": "Yare Contacts",
+      "folder": "apps/yare-contacts",
+      "description": "Keep your people in one place.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018120xxx",
+      "devPort": 4604,
+      "readme": "apps/yare-contacts/README.md",
+      "deployment": "apps/yare-contacts/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-contacts/skills/backup/SKILL.md",
+        "deploy": "apps/yare-contacts/skills/deploy/SKILL.md",
+        "guide": "apps/yare-contacts/skills/guide/SKILL.md",
+        "install": "apps/yare-contacts/skills/install/SKILL.md",
+        "update": "apps/yare-contacts/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "crypto",
+      "name": "Yare Crypto",
+      "folder": "apps/yare-crypto",
+      "description": "Your wallets, in one view.",
+      "status": "In progress",
+      "stage": "app",
+      "version": "0.1.0",
+      "needsDatabase": true,
+      "migrationRange": "20261018230xxx",
+      "devPort": 4614,
+      "readme": "apps/yare-crypto/README.md",
+      "deployment": "apps/yare-crypto/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-crypto/skills/backup/SKILL.md",
+        "deploy": "apps/yare-crypto/skills/deploy/SKILL.md",
+        "guide": "apps/yare-crypto/skills/guide/SKILL.md",
+        "install": "apps/yare-crypto/skills/install/SKILL.md",
+        "update": "apps/yare-crypto/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "dash",
+      "name": "Yare Dash",
+      "folder": "apps/yare-dash",
+      "description": "Your Stripe numbers, charted.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018240xxx",
+      "devPort": 4615,
+      "readme": "apps/yare-dash/README.md",
+      "deployment": "apps/yare-dash/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-dash/skills/backup/SKILL.md",
+        "deploy": "apps/yare-dash/skills/deploy/SKILL.md",
+        "guide": "apps/yare-dash/skills/guide/SKILL.md",
+        "install": "apps/yare-dash/skills/install/SKILL.md",
+        "update": "apps/yare-dash/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "fit",
+      "name": "Yare Fit",
+      "folder": "apps/yare-fit",
+      "description": "Every session, written down.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018250xxx",
+      "devPort": 4616,
+      "readme": "apps/yare-fit/README.md",
+      "deployment": "apps/yare-fit/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-fit/skills/backup/SKILL.md",
+        "deploy": "apps/yare-fit/skills/deploy/SKILL.md",
+        "guide": "apps/yare-fit/skills/guide/SKILL.md",
+        "install": "apps/yare-fit/skills/install/SKILL.md",
+        "update": "apps/yare-fit/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "flash",
+      "name": "Yare Flash",
+      "folder": "apps/yare-flash",
+      "description": "Cards that come back when you need them.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018260xxx",
+      "devPort": 4617,
+      "readme": "apps/yare-flash/README.md",
+      "deployment": "apps/yare-flash/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-flash/skills/backup/SKILL.md",
+        "deploy": "apps/yare-flash/skills/deploy/SKILL.md",
+        "guide": "apps/yare-flash/skills/guide/SKILL.md",
+        "install": "apps/yare-flash/skills/install/SKILL.md",
+        "update": "apps/yare-flash/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "fonts",
+      "name": "Yare Fonts",
+      "folder": "apps/yare-fonts",
+      "description": "Free fonts, commercial use included.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": false,
+      "migrationRange": null,
+      "devPort": 4618,
+      "readme": "apps/yare-fonts/README.md",
+      "deployment": "apps/yare-fonts/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-fonts/skills/backup/SKILL.md",
+        "deploy": "apps/yare-fonts/skills/deploy/SKILL.md",
+        "guide": "apps/yare-fonts/skills/guide/SKILL.md",
+        "install": "apps/yare-fonts/skills/install/SKILL.md",
+        "update": "apps/yare-fonts/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "forms",
+      "name": "Yare Forms",
+      "folder": "apps/yare-forms",
+      "description": "Forms, surveys and good questions.",
+      "status": "In progress",
+      "stage": "app",
+      "version": "0.2.0",
+      "needsDatabase": true,
+      "migrationRange": "20261018100xxx",
+      "devPort": 4601,
+      "readme": "apps/yare-forms/README.md",
+      "deployment": "apps/yare-forms/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-forms/skills/backup/SKILL.md",
+        "deploy": "apps/yare-forms/skills/deploy/SKILL.md",
+        "guide": "apps/yare-forms/skills/guide/SKILL.md",
+        "install": "apps/yare-forms/skills/install/SKILL.md",
+        "update": "apps/yare-forms/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "groups",
+      "name": "Yare Groups",
+      "folder": "apps/yare-groups",
+      "description": "Your community, in channels.",
+      "status": "In progress",
+      "stage": "app",
+      "version": "0.1.0",
+      "needsDatabase": true,
+      "migrationRange": "20261018300xxx",
+      "devPort": 4621,
+      "readme": "apps/yare-groups/README.md",
+      "deployment": "apps/yare-groups/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-groups/skills/backup/SKILL.md",
+        "deploy": "apps/yare-groups/skills/deploy/SKILL.md",
+        "guide": "apps/yare-groups/skills/guide/SKILL.md",
+        "install": "apps/yare-groups/skills/install/SKILL.md",
+        "update": "apps/yare-groups/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "launcher",
+      "name": "Yare Launcher",
+      "folder": "apps/yare-launcher",
+      "description": "Set up the whole collection on your own accounts and keep track of it.",
+      "status": "In progress",
+      "stage": "app",
+      "version": "0.2.0",
+      "needsDatabase": true,
+      "migrationRange": "20261018000xxx",
+      "devPort": 4600,
+      "readme": "apps/yare-launcher/README.md",
+      "deployment": "apps/yare-launcher/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-launcher/skills/backup/SKILL.md",
+        "deploy": "apps/yare-launcher/skills/deploy/SKILL.md",
+        "guide": "apps/yare-launcher/skills/guide/SKILL.md",
+        "install": "apps/yare-launcher/skills/install/SKILL.md",
+        "update": "apps/yare-launcher/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "lingo",
+      "name": "Yare Lingo",
+      "folder": "apps/yare-lingo",
+      "description": "A language, a little every day.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018280xxx",
+      "devPort": 4619,
+      "readme": "apps/yare-lingo/README.md",
+      "deployment": "apps/yare-lingo/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-lingo/skills/backup/SKILL.md",
+        "deploy": "apps/yare-lingo/skills/deploy/SKILL.md",
+        "guide": "apps/yare-lingo/skills/guide/SKILL.md",
+        "install": "apps/yare-lingo/skills/install/SKILL.md",
+        "update": "apps/yare-lingo/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "links",
+      "name": "Yare Links",
+      "folder": "apps/yare-links",
+      "description": "Every link you have, on one page.",
+      "status": "In progress",
+      "stage": "app",
+      "version": "0.7.0",
+      "needsDatabase": true,
+      "migrationRange": "20261018310xxx",
+      "devPort": 4622,
+      "readme": "apps/yare-links/README.md",
+      "deployment": "apps/yare-links/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-links/skills/backup/SKILL.md",
+        "deploy": "apps/yare-links/skills/deploy/SKILL.md",
+        "guide": "apps/yare-links/skills/guide/SKILL.md",
+        "install": "apps/yare-links/skills/install/SKILL.md",
+        "update": "apps/yare-links/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "looks",
+      "name": "Yare Looks",
+      "folder": "apps/yare-looks",
+      "description": "Try a new look before you commit.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018170xxx",
+      "devPort": 4609,
+      "readme": "apps/yare-looks/README.md",
+      "deployment": "apps/yare-looks/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-looks/skills/backup/SKILL.md",
+        "deploy": "apps/yare-looks/skills/deploy/SKILL.md",
+        "guide": "apps/yare-looks/skills/guide/SKILL.md",
+        "install": "apps/yare-looks/skills/install/SKILL.md",
+        "update": "apps/yare-looks/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "meet",
+      "name": "Yare Meet",
+      "folder": "apps/yare-meet",
+      "description": "A little less back-and-forth.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018130xxx",
+      "devPort": 4605,
+      "readme": "apps/yare-meet/README.md",
+      "deployment": "apps/yare-meet/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-meet/skills/backup/SKILL.md",
+        "deploy": "apps/yare-meet/skills/deploy/SKILL.md",
+        "guide": "apps/yare-meet/skills/guide/SKILL.md",
+        "install": "apps/yare-meet/skills/install/SKILL.md",
+        "update": "apps/yare-meet/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "pages",
+      "name": "Yare Pages",
+      "folder": "apps/yare-pages",
+      "description": "Your own place on the web.",
+      "status": "In progress",
+      "stage": "app",
+      "version": "0.1.0",
+      "needsDatabase": true,
+      "migrationRange": "20261018180xxx",
+      "devPort": 4603,
+      "readme": "apps/yare-pages/README.md",
+      "deployment": "apps/yare-pages/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-pages/skills/backup/SKILL.md",
+        "deploy": "apps/yare-pages/skills/deploy/SKILL.md",
+        "guide": "apps/yare-pages/skills/guide/SKILL.md",
+        "install": "apps/yare-pages/skills/install/SKILL.md",
+        "update": "apps/yare-pages/skills/update/SKILL.md",
+        "website": "apps/yare-pages/skills/website/SKILL.md"
+      }
+    },
+    {
+      "slug": "persona",
+      "name": "Yare Persona",
+      "folder": "apps/yare-persona",
+      "description": "An assistant that is yours.",
+      "status": "Not started",
+      "stage": "shell",
+      "version": "0.0.1",
+      "needsDatabase": true,
+      "migrationRange": "20261018290xxx",
+      "devPort": 4620,
+      "readme": "apps/yare-persona/README.md",
+      "deployment": "apps/yare-persona/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-persona/skills/backup/SKILL.md",
+        "deploy": "apps/yare-persona/skills/deploy/SKILL.md",
+        "guide": "apps/yare-persona/skills/guide/SKILL.md",
+        "install": "apps/yare-persona/skills/install/SKILL.md",
+        "update": "apps/yare-persona/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "sign",
+      "name": "Yare Sign",
+      "folder": "apps/yare-sign",
+      "description": "Send documents. Collect signatures.",
+      "status": "In progress",
+      "stage": "app",
+      "version": "0.1.0",
+      "needsDatabase": true,
+      "migrationRange": "20261018110xxx",
+      "devPort": 4602,
+      "readme": "apps/yare-sign/README.md",
+      "deployment": "apps/yare-sign/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-sign/skills/backup/SKILL.md",
+        "deploy": "apps/yare-sign/skills/deploy/SKILL.md",
+        "guide": "apps/yare-sign/skills/guide/SKILL.md",
+        "install": "apps/yare-sign/skills/install/SKILL.md",
+        "update": "apps/yare-sign/skills/update/SKILL.md"
+      }
+    },
+    {
+      "slug": "transfer",
+      "name": "Yare Transfer",
+      "folder": "apps/yare-transfer",
+      "description": "Share files with a simple link.",
+      "status": "In progress",
+      "stage": "app",
+      "version": "0.1.0",
+      "needsDatabase": true,
+      "migrationRange": "20261018140xxx",
+      "devPort": 4606,
+      "readme": "apps/yare-transfer/README.md",
+      "deployment": "apps/yare-transfer/DEPLOYMENT.md",
+      "skills": {
+        "backup": "apps/yare-transfer/skills/backup/SKILL.md",
+        "deploy": "apps/yare-transfer/skills/deploy/SKILL.md",
+        "guide": "apps/yare-transfer/skills/guide/SKILL.md",
+        "install": "apps/yare-transfer/skills/install/SKILL.md",
+        "update": "apps/yare-transfer/skills/update/SKILL.md"
+      }
+    }
+  ]
+}

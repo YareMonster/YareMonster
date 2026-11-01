@@ -1,0 +1,20 @@
+{
+  "name": "yare-monster",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Independent, self-hosted apps that replace subscriptions with tools you own. Each app under apps/ installs and deploys on its own.",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://yare.monster",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "sync-ui": "node scripts/sync-ui.mjs",
+    "check-ui": "node scripts/sync-ui.mjs --check",
+    "db:push": "node scripts/db-push.mjs",
+    "skills": "node scripts/skills.mjs",
+    "check-skills": "node scripts/skills.mjs --check",
+    "catalog": "node scripts/catalog.mjs"
+  }
+}

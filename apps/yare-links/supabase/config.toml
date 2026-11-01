@@ -1,0 +1,12 @@
+# Supabase CLI configuration for Yare Links.
+# Link this folder to your own project and push its migrations:
+#   npx supabase link --project-ref <your-project-ref>
+#   npm run db:push
+# Then deploy the Edge Function that reads YouTube and Substack feeds for feed blocks:
+#   npx supabase functions deploy yarelinks-feed --project-ref <your-project-ref>
+project_id = "yare-links"
+
+# Visitors have no account, so the gateway must not ask for a JWT. This also lets the new
+# publishable keys call it.
+[functions.yarelinks-feed]
+verify_jwt = false

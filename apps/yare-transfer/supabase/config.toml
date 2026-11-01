@@ -1,0 +1,12 @@
+# Supabase CLI configuration for Yare Transfer.
+# Link this folder to your own project and push its migrations:
+#   npx supabase link --project-ref <your-project-ref>
+#   npm run db:push
+# Then deploy the Edge Function that hands recipients their files and removes expired ones:
+#   npx supabase functions deploy yaretransfer-file --project-ref <your-project-ref>
+project_id = "yare-transfer"
+
+# The function checks the link, the expiry and the password itself, so the gateway does not need
+# a JWT. This also lets the new publishable keys call it.
+[functions.yaretransfer-file]
+verify_jwt = false

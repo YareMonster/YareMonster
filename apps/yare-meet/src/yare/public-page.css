@@ -1,0 +1,95 @@
+/*
+ * A public page: a published form, a transfer, a booking. Shared by every app that shows one. Everything here is driven by the theme variables the page sets on .yp
+ * (--f-bg, --f-text, --f-muted, --f-accent, --f-accent-text, --f-field, --f-field-border), so a
+ * theme is nine values and nothing else.
+ */
+.yp {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--f-bg);
+  color: var(--f-text);
+  font-family: var(--font-sans);
+}
+.yp__progress { position: fixed; inset: 0 0 auto 0; height: 4px; background: color-mix(in oklab, var(--f-text) 12%, transparent); z-index: 2; }
+.yp__progress-bar { height: 100%; background: var(--f-accent); transition: width 300ms var(--ease-out-quad); }
+.yp__preview { margin: 1rem auto 0; color: #ffffff; width: fit-content; max-width: calc(100% - 2rem); padding: 0.375rem 0.875rem; border-radius: 9999px; background: var(--f-text); font-size: 0.8125rem; font-weight: 600; z-index: 2; }
+.yp[data-dark="true"] .yp__preview { background: var(--f-field); color: var(--f-text); border: 1px solid var(--f-field-border); }
+.yp__logo { display: flex; justify-content: center; padding: 2rem 1.5rem 0; }
+.yp__logo img { height: 2.5rem; width: auto; max-width: 12rem; object-fit: contain; }
+.yp__main { flex: 1; display: grid; place-items: center; padding: 2rem var(--yare-gutter); }
+.yp__screen { width: 100%; max-width: 36rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.yp__image { max-width: 100%; max-height: 16rem; width: auto; height: auto; object-fit: contain; border-radius: var(--yare-radius-card); }
+.yp__title { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.75rem, 2.2vw + 1rem, 2.5rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--f-text); text-wrap: balance; }
+.yp__desc { font-size: 1.125rem; line-height: 1.5; color: var(--f-muted); }
+.yp__required { color: var(--f-muted); font-size: 0.875rem; }
+.yp__field {
+  width: 100%;
+  min-height: var(--yare-control-h-lg);
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--f-field-border);
+  border-radius: var(--yare-radius-control);
+  background: var(--f-field);
+  color: var(--f-text);
+  font: inherit;
+  font-size: 1.0625rem;
+  outline: none;
+  transition: border-color 100ms var(--ease-out), box-shadow 100ms var(--ease-out);
+}
+.yp__field::placeholder { color: color-mix(in oklab, var(--f-text) 45%, transparent); }
+.yp__field:focus { border-color: var(--f-accent); box-shadow: 0 0 0 3px color-mix(in oklab, var(--f-accent) 30%, transparent); }
+textarea.yp__field { min-height: 8rem; resize: vertical; }
+select.yp__field { appearance: none; }
+.yp__choices { display: flex; flex-direction: column; gap: 0.5rem; }
+.yp__choice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: var(--yare-control-h-lg);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--f-field-border);
+  border-radius: var(--yare-radius-control);
+  background: var(--f-field);
+  color: var(--f-text);
+  font: inherit;
+  font-size: 1.0625rem;
+  text-align: start;
+  cursor: pointer;
+  transition: border-color 100ms var(--ease-out), box-shadow 100ms var(--ease-out);
+}
+.yp__choice:hover { border-color: var(--f-accent); }
+.yp__choice[aria-pressed="true"], .yp__choice[aria-checked="true"] { border-color: var(--f-accent); box-shadow: inset 0 0 0 1px var(--f-accent); }
+.yp__choice:focus-visible { outline: 2px solid var(--f-accent); outline-offset: 2px; }
+.yp__key {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 1.75rem; height: 1.75rem; border-radius: 0.5rem;
+  border: 1px solid var(--f-field-border); font-size: 0.75rem; font-weight: 700; color: var(--f-muted);
+}
+.yp__choice[aria-pressed="true"] .yp__key, .yp__choice[aria-checked="true"] .yp__key { background: var(--f-accent); color: var(--f-accent-text); border-color: var(--f-accent); }
+.yp__yesno { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+.yp__error { color: #e5232b; font-size: 0.9375rem; font-weight: 500; }
+.yp[data-dark="true"] .yp__error { color: #ffb4b4; }
+.yp__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 0.25rem; }
+.yp__btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: var(--yare-control-h-lg); padding: 0 1.5rem;
+  border: 0; border-radius: var(--yare-radius-control);
+  background: var(--f-accent); color: var(--f-accent-text);
+  font: inherit; font-size: 1.0625rem; font-weight: 600; cursor: pointer;
+  transition: transform 150ms var(--ease-out), filter 100ms var(--ease-out);
+}
+.yp__btn:hover { filter: brightness(0.96); }
+.yp__btn:active { transform: scale(0.98); }
+.yp__btn:focus-visible { outline: 2px solid var(--f-text); outline-offset: 2px; }
+.yp__btn--ghost { background: transparent; color: var(--f-muted); padding-inline: 0.75rem; }
+.yp__btn--ghost:hover { color: var(--f-text); filter: none; }
+.yp__hint { font-size: 0.875rem; color: var(--f-muted); }
+.yp__hint kbd { font: inherit; font-weight: 600; }
+.yp .yare-powered { color: var(--f-muted); }
+.yp .yare-powered__link:hover { color: var(--f-text); background: color-mix(in oklab, var(--f-text) 8%, transparent); }
+.yp__closed { text-align: center; }
+@media (max-width: 767px) {
+  .yp__main { align-items: start; padding-top: 2.5rem; }
+  .yp__desc { font-size: 1rem; }
+}

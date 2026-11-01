@@ -1,0 +1,327 @@
+YARE MONSTER COMMUNITY LICENSE
+Version 1.0
+
+SPDX-License-Identifier: LicenseRef-Yare-Monster-Community-1.0
+
+Copyright (c) 2026 Orlando Pedro
+
+Project: https://yare.monster
+Contact: hola@yare.monster
+
+1. DEFINITIONS
+
+"Licensor" means Orlando Pedro.
+
+"Software" means the original Yare Monster source code, documentation,
+and accompanying assets made available by the Licensor under this
+License, including modifications to that material. It excludes
+third-party material identified as governed by separate terms.
+
+"You" means the individual or legal entity exercising rights under
+this License.
+
+"Your Organization" means the legal entity on whose behalf You use
+the Software and whose use You are authorized to manage.
+
+"Permitted Operations" means Your personal activities or the operation
+of Your Organization's own business, including interactions with its
+customers, clients, employees, and other participants, subject to the
+restrictions below.
+
+"Commercial Software Offering" means selling, licensing for payment,
+or providing paid access to the Software, a modified version, or a
+product or service incorporating the Software or a substantial portion
+of it. It includes paid hosted, white-label, embedded, and bundled
+offerings, whether the charge is direct or included in a larger fee.
+
+A business does not become a Commercial Software Offering merely
+because it earns revenue from its own goods or services and uses
+the Software to support those activities.
+
+2. LICENSE GRANT
+
+Subject to compliance with this License, the Licensor grants You a
+worldwide, non-exclusive, royalty-free copyright license to:
+
+a. Download, copy, inspect, and run the Software for Permitted Operations.
+
+b. Modify the Software for Permitted Operations.
+
+c. Host the Software in infrastructure controlled by You or Your
+   Organization, including accounts with third-party infrastructure
+   providers.
+
+d. Allow customers, clients, employees, and other participants to
+   interact with the Software as part of Permitted Operations.
+
+e. Redistribute unmodified or modified copies without charge, provided
+   You comply with Section 5.
+
+These permissions do not require a software license fee.
+
+The Licensor retains ownership of the original Software. This License
+does not transfer ownership to You.
+
+3. PERMITTED BUSINESS USE
+
+You may use the Software to support a revenue-generating business.
+
+Examples include:
+
+a. Collecting customer inquiries through a form.
+
+b. Accepting appointments for Your own paid services.
+
+c. Preparing invoices for Your own goods or services.
+
+d. Sharing files with Your customers or colleagues.
+
+e. Operating tools for Your Organization's own staff.
+
+Public access to a form, booking page, or similar interface is allowed
+when it supports Permitted Operations and is not itself a Commercial
+Software Offering.
+
+Users may submit information, book appointments, receive files, or
+otherwise interact with such an interface without becoming licensees
+of the underlying source code solely because of that interaction.
+
+4. RESTRICTED USE
+
+Without separate prior written permission from the Licensor, You
+must not:
+
+a. Sell, rent, commercially sublicense, or charge for copies of the
+   Software or modified versions.
+
+b. Operate a Commercial Software Offering.
+
+c. Incorporate the Software or a substantial portion of it into
+   software, templates, application bundles, or other products sold
+   or licensed for payment to others.
+
+d. Offer customers paid access to create or operate their own tools
+   using the Software's functionality, including as part of a larger
+   paid platform or subscription.
+
+e. Remove, conceal, or materially impair the attribution required
+   by Section 6.
+
+f. Represent a modified or independently operated version as an
+   official Yare Monster release or service.
+
+Ordinary fees paid to infrastructure providers for computing, storage,
+networking, domains, or related infrastructure do not by themselves
+make Your deployment a Commercial Software Offering.
+
+You may authorize contractors to install, configure, or maintain a
+permitted deployment on Your behalf. Payment for that work is allowed
+provided the contractor does not sell licenses to the Software,
+operate a paid hosted Yare Monster service, or package it as a product for
+resale. Your deployment must remain under Your control.
+
+5. REDISTRIBUTION AND MODIFICATIONS
+
+When redistributing the Software without charge, You must:
+
+a. Include a complete copy of this License.
+
+b. Preserve applicable copyright and attribution notices.
+
+c. Make the corresponding source code for the distributed Software,
+   including Your modifications, available to recipients without
+   charge under this License.
+
+d. Clearly identify material modifications and state that the modified
+   version is not an official release by the Licensor.
+
+e. Preserve required notices for third-party material.
+
+You may retain ownership of Your original modifications, but when
+distributing them as part of the Software, You must license those
+modifications under this License.
+
+You are not required to publish modifications used solely in Your
+own permitted deployment merely because users interact with that
+deployment over a network. Distribution of copies is governed by
+the conditions above.
+
+Recipients receive permission to use the original Software directly
+from the Licensor under this License. You may not grant broader rights
+to the original Software than this License provides.
+
+6. ATTRIBUTION
+
+All copies or distributions of the Software must retain this License
+and the following notice:
+
+"Yare Monster, created by Orlando Pedro.
+https://yare.monster"
+
+Each application with a user interface must include an accessible
+Help, About, or equivalent area that names Yare Monster, links to
+https://yare.monster, and makes this License available.
+
+Public-facing interactive pages rendered by the Software, including
+forms, booking pages, calendars, signature pages, and file-sharing
+pages, must display:
+
+"Pwrd by Yare Monster"
+
+The text must link to https://yare.monster where links are supported.
+
+The supplied Yare Monster logo must accompany this credit where a graphical
+interface supports it. The logo may be scaled proportionately for
+the layout.
+
+The credit must be legible, reasonably visible, and accessible in
+normal use. It may be unobtrusive, but must not be hidden, made
+transparent, placed outside the visible page, or concealed behind
+an interaction.
+
+These requirements apply to the Software's interfaces. They do not
+require You to add Yare Monster branding to Your own uploaded files, collected
+data, invoices, signed documents, exports, or other business content
+solely because the Software processed or generated them.
+
+Attribution identifies the Software's origin. It must not imply that
+the Licensor operates, endorses, supervises, or has access to Your
+deployment.
+
+7. NAMES, LOGOS, AND OTHER BRAND ASSETS
+
+You may reproduce the supplied Yare Monster names, logos, and mascot
+assets within permitted deployments and redistributions as needed
+to preserve the Software's identity and satisfy Section 6.
+
+No permission is granted to register confusingly similar trademarks,
+claim ownership of Yare Monster branding, sell branded merchandise,
+or imply sponsorship or endorsement.
+
+You may add Your own branding to a permitted deployment while
+retaining the required attribution.
+
+8. THIRD-PARTY MATERIAL
+
+Third-party libraries, fonts, icons, services, and other material
+remain subject to their own licenses and terms.
+
+This License does not replace those terms, restrict rights granted
+directly by their owners, or grant rights the Licensor does not hold.
+
+You are responsible for complying with applicable third-party terms.
+
+9. YOUR DATA AND CONTENT
+
+You retain any rights You hold in Your data, uploaded content, and
+business materials.
+
+This License does not grant the Licensor access to Your accounts,
+credentials, databases, or deployment.
+
+Rights in third-party content remain with their respective owners.
+
+10. OPERATOR RESPONSIBILITY
+
+You are responsible for assessing the Software's suitability and
+reviewing its code, dependencies, configuration, and integrations
+before use.
+
+You are responsible for Your deployment, including:
+
+a. Accounts, credentials, and access controls.
+b. Database and storage permissions.
+c. Backups, recovery, updates, and monitoring.
+d. Infrastructure and third-party charges.
+e. Data collection, processing, retention, and disclosure.
+f. Applicable privacy, security, and other legal obligations.
+
+Unless separately agreed in writing, the Licensor does not administer
+Your deployment and has no obligation to provide support, updates,
+maintenance, security fixes, or any service level.
+
+11. NO WARRANTY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS
+PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OR CONDITIONS
+OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY.
+
+THIS INCLUDES, WITHOUT LIMITATION, WARRANTIES OR CONDITIONS OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE,
+NON-INFRINGEMENT, ACCURACY, AVAILABILITY, AND SECURITY.
+
+THE LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE,
+UNINTERRUPTED, SECURE, OR SUITABLE FOR YOUR REQUIREMENTS.
+
+12. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSOR SHALL
+NOT BE LIABLE FOR CLAIMS, DAMAGES, LOSSES, OR OTHER LIABILITY ARISING
+FROM OR RELATED TO THE SOFTWARE OR ITS USE OR INABILITY TO BE USED,
+WHETHER IN CONTRACT, TORT, OR OTHERWISE.
+
+THIS INCLUDES LOSS OF DATA, PROFITS, REVENUE, BUSINESS OPPORTUNITY,
+BUSINESS INTERRUPTION, AND COSTS OF SUBSTITUTE SERVICES, EVEN IF
+ADVISED OF THEIR POSSIBILITY.
+
+NOTHING IN THIS LICENSE EXCLUDES OR LIMITS LIABILITY THAT CANNOT
+LAWFULLY BE EXCLUDED OR LIMITED, OR REMOVES NON-WAIVABLE RIGHTS
+UNDER APPLICABLE LAW.
+
+13. TERMINATION AND REMEDY
+
+Your rights under this License terminate automatically if You
+materially violate its terms.
+
+If this is Your first violation and You fully remedy it within
+30 days after becoming aware of it, Your rights are automatically
+reinstated.
+
+For subsequent violations, reinstatement requires written permission
+from the Licensor.
+
+If Your rights terminate and are not reinstated, You must stop
+exercising the rights granted under this License, except as necessary
+to export Your own data, remove the Software, or retain copies
+required by law.
+
+Termination of Your rights does not by itself terminate the rights
+of recipients who received copies under this License and remain
+in compliance.
+
+Sections concerning ownership, restrictions, accrued obligations,
+third-party rights, warranties, and liability survive termination
+to the extent relevant.
+
+14. OTHER TERMS
+
+This License grants only the rights expressly stated. No other
+intellectual-property rights are granted by implication.
+
+Nothing in this License restricts rights that cannot be restricted
+under applicable law or rights separately granted under applicable
+repository-hosting platform terms.
+
+If a provision is unenforceable, the remaining provisions continue
+to apply to the extent permitted by law.
+
+A failure to enforce a provision is not a waiver of the right to
+enforce it later.
+
+The Licensor may offer separate written licenses or permissions.
+Such permission applies only to the parties and uses it expressly
+covers.
+
+Publication of a future license version does not automatically
+replace this License for copies You received under this version.
+
+The README and other summaries explain the project but do not
+expand or replace the permissions in this License.
+
+15. LICENSING CONTACT
+
+For commercial licensing, attribution exceptions, or questions
+about uses not clearly permitted, contact:
+
+Orlando Pedro
+hola@yare.monster
